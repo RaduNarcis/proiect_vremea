@@ -1,5 +1,6 @@
+// be sure to replace 'your_api_key_here' with your actual OpenWeatherMap API key
+const apiKey = "your_api_key_here";
 let selectedCity;
-const apiKey = "42bf47e055b40c2949c1df28bfe30f74";
 let weatherData;
 
 async function fetchWeatherData(city) {
