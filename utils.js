@@ -1,7 +1,16 @@
 // Reusable utility functions for the weather app
 // These are global functions (browser) so other non-module scripts can call them.
-// be sure to replace 'your_api_key_here' with your actual OpenWeatherMap API key
-const apiKey = "42bf47e055b40c2949c1df28bfe30f74";
+
+// API key is read from `window.APP_CONFIG.apiKey` so it can be provided via a
+// local `config.js` (see `config.example.js`). Do NOT commit your real `config.js`.
+
+// Read API key from window.APP_CONFIG (set locally in config.js copied from config.example.js)
+const apiKey = (window.APP_CONFIG && window.APP_CONFIG.apiKey) || "";
+if (!apiKey) {
+  console.warn(
+    "API key not found: create a local config.js from config.example.js and add your OpenWeatherMap key."
+  );
+}
 
 function saveToLocalStorage(city) {
   localStorage.setItem("selectedCity", city);

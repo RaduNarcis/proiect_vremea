@@ -1,0 +1,5 @@
+# Local config containing API keys
+config.js
+
+# IDE/editor folders
+.idea/
