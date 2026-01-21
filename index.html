@@ -13,7 +13,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
+  <script src="config.js" defer></script>
+  <script src="utils.js" defer></script>
+  <script src="cityWheater.js" defer></script>
+  <script src="cityWheaterForcast.js" defer></script>
 </head>
 
 <body>
@@ -47,22 +50,25 @@
               <button class="dropdown-item timisoara" onclick="updateCity('Timișoara')">Timișoara</button>
             </li>
             <li><button class="dropdown-item oradea" onclick="updateCity('Oradea')">Oradea</button></li>
+            <li><button class="dropdown-item arad" onclick="updateCity('Arad')">Arad</button></li>
+            <li><button class="dropdown-item sibiu" onclick="updateCity('Sibiu')">Sibiu</button></li>
           </ul>
         </div>
       </div>
     </section>
     <section class="py-5 bg-secondary">
       <div class="container">
-        <h2 class="text-primary text-center mb-5">Vremea curentă</h2>
+        <h2 class="text-primary text-center mb-5" id="local-weather">Vremea curentă</h2>
         <div class="current-weather"></div>
       </div>
     </section>
     <section class="py-5">
       <div class="container">
         <h2 class="text-primary text-center mb-5">Prognoză pe 5 zile</h2>
-        <div class="weather-forecast"></div>
+        <div class="weather-forecast d-flex flex-wrap"></div>
       </div>
     </section>
+    <button id="scrollTopBtn" aria-label="Mergi sus">↑</button>
   </main>
   <footer class="bg-dark">
     <div class="container">
